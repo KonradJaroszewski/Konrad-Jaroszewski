@@ -11,7 +11,7 @@ import { EmployeeService } from '../service/employee.service';
   styleUrls: ["./employee-list.component.css"]
 })
 export class EmployeeListComponent implements OnInit {
-  employees: Observable<Employee[]>;
+  employees: Employee[];
 
   constructor(private employeeService: EmployeeService) {}
   Employees: any =[];
@@ -29,10 +29,11 @@ export class EmployeeListComponent implements OnInit {
           this.reloadData();
         },
         error => console.log(error));
-  }
-   reloadData() {
-    this.employees = this.employeeService.getEmployeeList()
-    
-  }
+      }
+        reloadData() {
+          this.employeeService.getEmployeeList().subscribe( e => {
+            this.employees = e;
+          } );
+        }
 
 }

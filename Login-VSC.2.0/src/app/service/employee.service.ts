@@ -4,24 +4,29 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class EmployeeService {
-private baseUrl='/employees';
-  constructor(private http: HttpClient) { }
+  private employeeUrl:string;
+private baseUrl='http://localhost:8082/employee';
+  constructor(private http: HttpClient) { 
+
+  }
 
   getEmployee(id:number): Observable<Object>{
     return this.http.get(`${this.baseUrl}/${id}`);
   }
   createEmployee(employee:Object): Observable<Object>{
-    return this.http.post(`${this.baseUrl}`,employee);
+    return this.http.post(`${this.baseUrl}`+`/create`,employee);
   }
   updateEmployee(id:number):Observable<any>{
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}` + `/update` + `/${id}`);
   }
   deleteEmployee(id:number):Observable<any>{
-    return this.http.delete(`${this.baseUrl}/${id}`,{ responseType:'text'});
+    return this.http.delete(`${this.baseUrl}`+ `/delete` + `/${id}`,{ responseType:'text'});
 
   }
   getEmployeeList():Observable<any>{
-    return this.http.get(`${this.baseUrl}`);
+     return this.http.get(`${this.baseUrl}`+`/all`);
+     
   }
 }

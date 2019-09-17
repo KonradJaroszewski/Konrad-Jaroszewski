@@ -3,9 +3,23 @@
     
     <a routerLink="/">Logout</a>
     <div routerLink="/Offers"><button>OffersOperations</button></div>
-    <div class="output">
-            <label>Twoje oferty</label>
-            <input type="file">
-    </div>
+<label>Categories</label>
+<div class="input" (submit)="$PickCategory(event)">
+    <input type="text">
+    <input type="submit" value="Wybierz">
+</div>
+<div>
+
+</div>
+<label>Preferencys</label>
+<div class="input">
     
+    <input type="text">
+
+    <button>Wybierz</button>
+</div>
 </form>
+      
+   
+    
+

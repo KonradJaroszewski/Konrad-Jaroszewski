@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+  import { from } from 'rxjs';
 
 @Component({
   selector: 'app-login-form',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginFormComponent implements OnInit {
   
 
-  constructor(private router:Router  ) {
+  constructor(private router:Router) {
     
    } //logowanie zabezpieczenie przed pustymi polami//
    

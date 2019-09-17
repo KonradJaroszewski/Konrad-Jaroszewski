@@ -1,5 +1,5 @@
 {
-    "/EmployeeList": {
+    "/employee": {
       "target": "http://localhost:8082",
       "secure": false
     }

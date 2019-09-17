@@ -8,17 +8,12 @@ import Game.WebApp3.model.Employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import Game.WebApp3.repository.EmployeeRepository;
+
+@CrossOrigin (origins = "http.localhost:4200")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/employee")
 public class EmployeeControler {
     @Autowired
     private EmployeeRepository employeeRepository;
@@ -27,9 +22,7 @@ public class EmployeeControler {
     @GetMapping("/all")//wyszukanie wszystkich uzytkoników//
     public List<Employee> getAllEmployees() {
         List<Employee> employees = new ArrayList<>();
-        for (Employee employee : employeeRepository.findAll()) {
-            employees.add(new Employee(employee.getId(),employee.getUsername(), employee.getName(), employee.getSurname(), employee.getPassword()));
-        }
+        employeeRepository.findAll().forEach(employees::add );
         return employees;
     }
 

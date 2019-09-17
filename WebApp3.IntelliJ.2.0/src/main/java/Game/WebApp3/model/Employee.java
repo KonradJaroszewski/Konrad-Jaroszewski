@@ -19,19 +19,7 @@ public class Employee {
 
     public Employee() {
     }
-
     public Employee(String username, String name, String surname, String password) {
-        this.Name = name;
-        this.Username = username;
-        this.Surname = surname;
-        this.Password = password;
-    }
-
-    public Employee(String Konrad, String Jaroszewski) {
-    }
-
-    public Employee(int id, String username, String name, String surname, String password) {
-        this.id = id;
         this.Name = name;
         this.Username = username;
         this.Surname = surname;

@@ -1,4 +1,5 @@
-package Game.WebApp3.seciurity;
+
+/*package Game.WebApp3.seciurity;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -9,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 
 import javax.sql.DataSource;
-@Configuration
+//@Configuration
 public class PasswordSeciurity extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource ;
@@ -25,4 +26,4 @@ public class PasswordSeciurity extends WebSecurityConfigurerAdapter {
 
 
 
-}
+}*/

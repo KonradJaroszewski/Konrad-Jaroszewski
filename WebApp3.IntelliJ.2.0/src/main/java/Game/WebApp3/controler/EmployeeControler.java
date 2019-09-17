@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import Game.WebApp3.repository.EmployeeRepository;
 
-@CrossOrigin (origins = "http.localhost:4200")
+@CrossOrigin (origins =  "http://localhost:4200")
 @RestController
 @RequestMapping("/employee")
 public class EmployeeControler {
@@ -26,7 +26,7 @@ public class EmployeeControler {
         return employees;
     }
 
-    @GetMapping("/employees/{id}")//wyszukanie uzytkownika po ID//
+    @GetMapping("/{id}")//wyszukanie uzytkownika po ID//
     public ResponseEntity<Employee> getEmployeeById(@PathVariable(value = "id") Long employeeId) {
         Employee employee = employeeRepository.findById(employeeId).orElse(null);
 

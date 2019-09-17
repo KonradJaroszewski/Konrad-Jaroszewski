@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginFormComponent implements OnInit {
   
 
-  constructor(private router:Router ) {
+  constructor(private router:Router  ) {
     
    } //logowanie zabezpieczenie przed pustymi polami//
    
@@ -28,6 +28,7 @@ export class LoginFormComponent implements OnInit {
 return;
 
     }
+    
      else if(username=='admin'&& password=='admin'){
      this.router.navigate(['/dashboard']);
     }

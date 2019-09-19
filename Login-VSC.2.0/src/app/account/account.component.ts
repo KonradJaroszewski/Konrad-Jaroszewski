@@ -28,7 +28,7 @@ export class AccountComponent implements OnInit {
   }   
   onSubmit(){
     this.submitted=true;
-    this.save;
+    this.save();
   }
     
   }

@@ -1,7 +1,7 @@
 <h1>Employees</h1>
 
-<div *ngFor="let Employee of Employees" | asynic style="width:300px;">
-</div>
+
+
 <div class="panel panel-default">
         <div class="panel-heading">
             
@@ -11,6 +11,7 @@
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Surname</th>
                         <th>Username</th>
@@ -20,15 +21,17 @@
                 </thead>
                 <tbody>
                     
-                    <tr *ngFor= "let Employee of Employees">
-                        <td>{{employee.Name}}</td>
-                        <td>{{employee.Surname}}</td>
-                        <td>{{employee.Username}}</td>
-                        <td>{{employee.Password}}</td>
-                        <td><button (click)="deleteEmployee(employee.id)">Delete</button></td>
+                    <tr *ngFor= "let employee of employees">
+                        <td>{{employee.id}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.surname}}</td>
+                        <td>{{employee.username}}</td>
+                        <td>{{employee.password}}</td>
+                        <td><span class="button is-small btn-danger" (click)="deleteEmployee()">Delete</span></td>
                     </tr>
+                    
                 </tbody>
             </table>
         </div>
     </div>
-    
+ 

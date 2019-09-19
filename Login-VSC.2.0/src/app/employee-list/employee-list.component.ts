@@ -1,7 +1,7 @@
 import { Observable  } from "rxjs";
 import { CommonModule } from '@angular/common';
 import { Employee } from "./../employee";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { EmployeeService } from '../service/employee.service';
 
 
@@ -12,7 +12,7 @@ import { EmployeeService } from '../service/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
   employees: Employee[];
-
+@Input() employee:Employee;
   constructor(private employeeService: EmployeeService) {}
   Employees: any =[];
   ngOnInit() {
@@ -21,8 +21,8 @@ export class EmployeeListComponent implements OnInit {
   }
 
  
-  deleteEmployee(id: number) {
-    this.employeeService.deleteEmployee(id)
+  deleteEmployee() {
+    this.employeeService.deleteEmployee(this.employee.id)
       .subscribe(
         data => {
           console.log(data);
@@ -33,6 +33,7 @@ export class EmployeeListComponent implements OnInit {
         reloadData() {
           this.employeeService.getEmployeeList().subscribe( e => {
             this.employees = e;
+            
           } );
         }
 

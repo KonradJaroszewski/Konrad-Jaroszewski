@@ -1,8 +1,8 @@
 export class Employee {
     id: number;
-    Name: string;
-    SurName: string;
-    Username: string;
-    Password: string;
+    name: string;
+    surname: string;
+    username: string;
+    password: string;
     
 }

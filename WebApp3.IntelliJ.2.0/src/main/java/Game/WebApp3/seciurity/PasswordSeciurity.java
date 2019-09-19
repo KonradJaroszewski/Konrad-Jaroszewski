@@ -23,7 +23,15 @@ public class PasswordSeciurity extends WebSecurityConfigurerAdapter {
                 "employees WHERE username = ?").authoritiesByUsernameQuery("SELECT username, 'ROLE_USER' From employees" +
                 " WHERE username=?");// sprawdzanie czy uzytkonik loguje sie z poprawnego username i hasła//
     }
-
+@Override
+protected void configure(HttpSecurity httpSecurity)throws Exception{
+httpSecurity.csrf().disable().
+authorizedRequest()
+.antMatchers("/**").permitAll()
+.anyRequest().authenticated()
+.and()
+.httpBasic();
+}
 
 
 }*/

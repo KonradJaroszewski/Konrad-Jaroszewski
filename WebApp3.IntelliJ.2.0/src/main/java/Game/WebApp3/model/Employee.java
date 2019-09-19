@@ -12,19 +12,24 @@ import javax.persistence.Table;
 public class Employee {
 
     private int id;
-    private String Username;
-    private String Name;
-    private String Surname;
-    private String Password;
+    public String username;
+    public String name;
+    public String surname;
+    public String password;
+    public String role;
+
 
     public Employee() {
     }
-    public Employee(String username, String name, String surname, String password) {
-        this.Name = name;
-        this.Username = username;
-        this.Surname = surname;
-        this.Password = password;
+    public Employee(String username, String name, String surname, String password , String role) {
+        this.name = name;
+        this.username = username;
+        this.surname = surname;
+        this.password = password;
+        this.role=role;
     }
+
+
 
     public void setId(int id) {
         this.id = id;
@@ -37,44 +42,50 @@ public class Employee {
         return id;
     }
 
-    @Column(name = "Name")
+    @Column(name = "name", nullable = false)
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String Name) {
-        this.Name = Name;
+        this.name = name;
     }
 
-    @Column(name = "Surname")
+    @Column(name = "surname",nullable = false)
     public String getSurname() {
-        return Surname;
+        return surname;
     }
 
-    public void setSurname(String Surname) {
-        this.Surname = Surname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    @Column(name = "Username")
+    @Column(name = "username",nullable = false)
     public String getUsername() {
-        return Username;
+        return username;
     }
 
-    public void setUsername(String Username) {
-        this.Username = Username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    @Column(name = "Password")
+    @Column(name = "password", nullable = false)
     public String getPassword() {
-        return Password;
+        return password;
     }
 
-    public void setPassword(String Password) {
-        this.Password = Password;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    @Column(name = "role",nullable = false)
+    public String getRole(){return role;}
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
-        return "Employee [id=" + id + ",Name=" + Name + ", Surname=" + Surname + ", Username=" + Username + ", Password=" + Password + "]";
+        return "Employee [id=" + id + ",Name=" + name + ", Surname=" + surname + ", Username=" + username + ", Password=" + password + ",Role="+role+"]";
     }
 }

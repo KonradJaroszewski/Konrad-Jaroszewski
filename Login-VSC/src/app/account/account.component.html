@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()">
+    <a routerLink="/dashboard"><button>Back</button></a>
+    
+            
+                <div></div>
+                Dodawanie użytkownika:
+                <div class="input">
+                        <label> Username </label>
+                        <input type="text" class="form-control" id="username" required [(ngModel)]="employee.username" name="username" >
+                    </div>
+                    <div class="input">
+                            <label> Password </label>
+                            <input type="text" class="form-control" id="password" required [(ngModel)]="employee.password" name="password">
+                   </div>
+                   <div class="input">
+                        <label> Name </label>
+                        <input type="text" class="form-control" id="name" required [(ngModel)]="employee.name" name="name" >
+               </div>
+               <div class="input">
+                    <label> Surname </label>
+                    <input type="text" class="form-control" id="surname" required [(ngModel)]="employee.surname" name="surname">
+           </div>
+                   <button type="submit" class="btn btn-success">dodaj</button>
+                   
+                    
+    
+    
+</form>
+<div [hidden]="!submitted">
+        <h4>pomyslnie dodano</h4>
+        <button class="btn btn-success"(click)="newEmployee()">Add</button>
+</div>
